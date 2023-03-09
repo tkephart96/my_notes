@@ -12,9 +12,18 @@ This is a repository for my SQL notes
 #### Use and verify database
 * `USE` database_name;
 * `SELECT DATABASE()`;
-
+#### Limit results in mysql, add to end of query
+* `LIMIT` count;
+* `LIMIT` count `OFFSET` count;
 
 # Quick SQL Cheatsheet
+
+Order
+1. Select
+2. From
+3. Where
+4. Order by
+5. Limit
 
 A quick reminder of all relevant SQL queries and examples on how to use them. 
 
@@ -52,7 +61,7 @@ Pull requests are welcome. Enjoy!
 * `SELECT` * `FROM` table_name `ORDER BY` column `DESC`;
 * `SELECT` * `FROM` table_name `ORDER BY` column1 `ASC`, column2 `DESC`;
 
-### **SELECT TOP**: used to specify the number of records to return from top of table
+### **SELECT TOP** and **LIMIT**: used to specify the number of records to return from top of table
 * `SELECT TOP` number columns_names `FROM` table_name `WHERE` condition;
 * `SELECT TOP` percent columns_names `FROM` table_name `WHERE` condition;
 * Not all database systems support `SELECT TOP`. The MySQL equivalent is the `LIMIT` clause
