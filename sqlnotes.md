@@ -2,6 +2,16 @@
 
 This is a repository for my SQL notes
 
+# Class notes for MYSQL
+
+* `SHOW DATABASES`;
+* `SHOW TABLES`;
+* `SHOW CREATE DATABASE` database_name;
+* `SHOW CREATE TABLE` table_name;
+* `USE` database_name;
+* `SELECT DATABASE()`;
+
+
 # Quick SQL Cheatsheet
 
 A quick reminder of all relevant SQL queries and examples on how to use them. 
