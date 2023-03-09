@@ -15,6 +15,7 @@ This is a repository for my SQL notes
 #### Limit results in mysql, add to end of query
 * `LIMIT` count;
 * `LIMIT` count `OFFSET` count;
+* `LIMIT` offset, limit;
 
 # Quick SQL Cheatsheet
 
