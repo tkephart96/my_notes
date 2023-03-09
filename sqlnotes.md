@@ -3,11 +3,13 @@
 This is a repository for my SQL notes
 
 # Class notes for MYSQL
-
+#### Show list of databases or tables of database in use
 * `SHOW DATABASES`;
 * `SHOW TABLES`;
+#### Show the sql code used to create database or table
 * `SHOW CREATE DATABASE` database_name;
 * `SHOW CREATE TABLE` table_name;
+#### Use and verify database
 * `USE` database_name;
 * `SELECT DATABASE()`;
 
@@ -34,7 +36,7 @@ Pull requests are welcome. Enjoy!
 ### **SELECT**: used to select data from a database
 * `SELECT` * `FROM` table_name;
 
-### **DISTINCT**: filters away duplicate values and returns rows of specified column
+### **DISTINCT**: filters away duplicate values and returns rows of specified column (like some ppl w/same first name, use this to get each unique/distinct first name)
 * `SELECT DISTINCT` column_name;
 
 ### **WHERE**: used to filter records/rows
@@ -80,6 +82,11 @@ Pull requests are welcome. Enjoy!
 ### **NULL**: values in a field with no value
 * `SELECT` * `FROM` table_name `WHERE` column_name `IS NULL`;
 * `SELECT` * `FROM` table_name `WHERE` column_name `IS NOT NULL`;
+
+### **AND** and **OR**: chaining WHERE clauses with condition statements
+* `SELECT` column_name `FROM` table_name `WHERE` column_name `IN` ('value1', 'value2') `AND` column_name2 `=` 'value3';
+* `SELECT` column_name `FROM` table_name `WHERE` column_name `IN` ('value1', 'value2') `OR` column_name2 `=` 'value3';
+* `SELECT` column_name `FROM` table_name `WHERE` Column_name `<` value1 `AND` (column_name2 `IN` ('value2', 'value3') `OR` column_name3 `=` 'value4');
 
 ### **AS**: aliases are used to assign a temporary name to a table or column
 * `SELECT` column_name `AS` alias_name `FROM` table_name;
