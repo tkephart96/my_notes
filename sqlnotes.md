@@ -55,8 +55,10 @@ Order
 1. Select
 2. From
 3. Where
-4. Order by
-5. Limit
+4. Group by
+5. Having
+6. Order by
+7. Limit
 
 A quick reminder of all relevant SQL queries and examples on how to use them. 
 
