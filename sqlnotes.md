@@ -16,6 +16,38 @@ This is a repository for my SQL notes
 * `LIMIT` count;
 * `LIMIT` count `OFFSET` count;
 * `LIMIT` offset, limit;
+#### **CONCAT()** combines strings
+* `SELECT CONCAT(`'string1','string2'`)`;
+  string1string2
+* `SELECT CONCAT(`'string1 ','string2 ','string3'`)`;
+  string1 string2 string3
+#### **SUBSTR()** extracts parts of strings
+* `SELECT SUBSTR(`'string', start_index, length`)`;
+* `SELECT SUBSTR(`'shop',2,3`)`;
+  hop
+#### **UPPER()|LOWER()** changes to uppercase/lowercase
+* `SELECT UPPER(`'string1'`), LOWER(`'string2'`)`;
+* `SELECT UPPER(`'shop'`), LOWER(`'SHOP'`)`;
+  SHOP | shop
+#### **CAST()** convert data types
+* `SELECT CAST(`input `as` type`)`;
+* `SELECT CAST(`123 `as` CHAR`), CAST(`'123' `as` UNSIGNED`)`;
+#### **REPLACE()** replace substrings
+* `SELECT REPLACE(`subject, search, replacement`)`;
+* `SELECT REPLACE(`'shopping', 'ing', 'er'`)`;
+  shopper
+#### Date and Time functions
+* `SELECT NOW()`;
+  YYYY-MM-DD H:MM:SS
+* `SELECT CURDATE()`;
+  YYYY-MM-DD
+* `SELECT CURTIME()`;
+  HH:MM:SS
+* `SELECT UNIX_TIMESTAMP()`;
+  number of seconds from midnight Jan 1, 1970
+* `SELECT CONCAT(`'Learning to code for ',`UNIX_TIMESTAMP() - UNIX_TIMESTAMP(`'2019-08-05'`)`,' seconds'`)`;
+* `SELECT CONVERT_TZ(`time, tz1, tz2`)`;
+
 
 # Quick SQL Cheatsheet
 
@@ -158,8 +190,9 @@ Pull requests are welcome. Enjoy!
 <a name="report"></a>
 # 3. Reporting Queries
 
-### **COUNT**: returns the # of occurrences
+### **COUNT**: returns the # of occurrences or rows
 * `SELECT COUNT (DISTINCT` column_name`)`;
+* `SELECT COUNT (*)`;
 
 ### **MIN() and MAX()**: returns the smallest/largest value of the selected column
 * `SELECT MIN (`column_names`) FROM` table_name `WHERE` condition;
@@ -167,6 +200,11 @@ Pull requests are welcome. Enjoy!
 
 ### **AVG()**: returns the average value of a numeric column
 * `SELECT AVG (`column_name`) FROM` table_name `WHERE` condition;
+
+### **ROUND()**: rounds input
+* `SELECT ROUND(`input, decimal`)`;
+* `SELECT ROUND(AVG(`sales`),2)`;
+  22.22
 
 ### **SUM()**: returns the total sum of a numeric column
 * `SELECT SUM (`column_name`) FROM` table_name `WHERE` condition;
