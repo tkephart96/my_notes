@@ -12,6 +12,8 @@ This is a repository for my SQL notes
 #### Use and verify database
 * `USE` database_name;
 * `SELECT DATABASE()`;
+#### Show table column descriptions
+* `DESCRIBE` table_name;
 #### Limit results in mysql, add to end of query
 * `LIMIT` count;
 * `LIMIT` count `OFFSET` count;
@@ -47,6 +49,8 @@ This is a repository for my SQL notes
   number of seconds from midnight Jan 1, 1970
 * `SELECT CONCAT(`'Learning to code for ',`UNIX_TIMESTAMP() - UNIX_TIMESTAMP(`'2019-08-05'`)`,' seconds'`)`;
 * `SELECT CONVERT_TZ(`time, tz1, tz2`)`;
+#### Join with same name columns
+* `SELECT` * `FROM` table1 `JOIN` table2 `USING(`column_name_shared`)`;
 
 
 # Quick SQL Cheatsheet
@@ -54,11 +58,12 @@ This is a repository for my SQL notes
 Order
 1. Select
 2. From
-3. Where
-4. Group by
-5. Having
-6. Order by
-7. Limit
+3. Join
+4. Where
+5. Group by
+6. Having
+7. Order by
+8. Limit
 
 A quick reminder of all relevant SQL queries and examples on how to use them. 
 
