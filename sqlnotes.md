@@ -51,7 +51,41 @@ This is a repository for my SQL notes
 * `SELECT CONVERT_TZ(`time, tz1, tz2`)`;
 #### Join with same name columns
 * `SELECT` * `FROM` table1 `JOIN` table2 `USING(`column_name_shared`)`;
-
+#### Case statements used for conditionals
+* `SELECT CASE` column_a
+        `WHEN` condition_a `THEN` value_1
+        `WHEN` condition_b `THEN` value_2
+        `ELSE` value_3
+        `END AS` new_column_name
+  `FROM` table_a;
+* `SELECT` dept_name,
+      `CASE` dept_name
+        `WHEN` 'research' `THEN` 'Development'
+        `WHEN` 'marketing' `THEN` 'Sales'
+        `ELSE` dept_name
+      `END AS` dept_group
+  `FROM` departments;
+* `SELECT CASE`
+          `WHEN` column_a `>` condition_1 `THEN` value_1
+          `WHEN` column_b `<=` condition_2 `THEN` value_2
+        `ELSE` value_3
+      `END AS` new_column_name
+  `FROM` table_a;
+* `SELECT` dept_name,
+        `CASE`
+          `WHEN` dept_name `IN` ('research', 'development') `THEN` 'R&D'
+          `WHEN` dept_name `IN` ('sales', 'marketing') `THEN` 'Sales & Marketing'
+          `WHEN` dept_name `IN` ('Production', 'Quality Management') `THEN` 'Prod & QM'
+        `ELSE` dept_name
+      `END AS` dept_group
+  `FROM` departments;
+#### IF statements for conditionals
+* `SELECT IF(`condition, value_1, value_2`) AS` new_column
+  `FROM` table_a;
+* `SELECT` dept_name,
+    `IF(`dept_name `=` 'Research', True, False`) AS` is_research
+  `FROM` employees.departments;
+* `SELECT DISTINCT` item_name, item_name `LIKE` '%var%' `FROM` table;
 
 # Quick SQL Cheatsheet
 
@@ -269,3 +303,31 @@ Pull requests are welcome. Enjoy!
    `column3` `datatype`, <br />
    `column4` `datatype`, <br />
    `);`
+
+
+
+   ### Others stuff
+   create temporary table my_numbers
+	(
+    n int unsigned not null,
+    name varchar(20) not null
+    )
+;
+
+select *
+from my_numbers
+;
+show tables;
+insert into my_numbers (n,name)
+values 	(1,'a')
+		,(2,'b')
+		,(3,'c')
+		,(4,'d')
+;
+update my_numbers
+set name = 'BIG'
+where n >= 4
+;
+delete from my_numbers
+where n = 2
+;
