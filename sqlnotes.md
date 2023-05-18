@@ -87,6 +87,10 @@ This is a repository for my SQL notes
   `FROM` employees.departments;
 * `SELECT DISTINCT` item_name, item_name `LIKE` '%var%' `FROM` table;
 
+#### Parameterization for pandas.read_sql pymysql
+* df = `pd.read_sql(`"SELECT * FROM table WHERE date_id >=  `%s`", 
+                       my_connection, `params=[`value_for_%s`])`
+
 # Quick SQL Cheatsheet
 
 Order
