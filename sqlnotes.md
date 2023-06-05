@@ -88,8 +88,10 @@ This is a repository for my SQL notes
 * `SELECT DISTINCT` item_name, item_name `LIKE` '%var%' `FROM` table;
 
 #### Parameterization for pandas.read_sql pymysql
-* df = `pd.read_sql(`"SELECT * FROM table WHERE date_id >=  `%s`", 
+* df = `pd.read_sql(`"SELECT * FROM table WHERE column =  `%s`", 
                        my_connection, `params=[`value_for_%s`])`
+* df = `pd.read_sql(`"SELECT * FROM table WHERE column =  `:name`", 
+                       my_connection, `params={'name':`value`})`
 
 # Quick SQL Cheatsheet
 
